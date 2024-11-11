@@ -39,7 +39,7 @@ export default function Documentacion() {
                 </p>
                 <h3 className="text-lg font-semibold">Puntos clave:</h3>
                 <ul className="flex flex-col justify-start text-left list-disc pl-5 space-y-2">
-                  <li>Virus classification with confidence score
+                  <li>
                     Clasificación de virus con puntuación de confianza sobre la clasificación
                   </li>
                   <li>
@@ -48,7 +48,7 @@ export default function Documentacion() {
                   <li>
                     Gráfico interactivo para la distribución de nucleótidos
                   </li>
-                  <li>Additional insights about the analyzed virus
+                  <li>
                     Descargas opcionales sobre insights adicionales del virus analizado como el ARN, cadena de aminoacidos, ADN complementario y el informe completo.
                   </li>
                 </ul>

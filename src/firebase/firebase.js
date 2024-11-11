@@ -8,6 +8,7 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
+  apiKey: "AIzaSyA_DaXxNM7jLGK0qxyNKhiY5TsZ10jqq3k",
   authDomain: "laboratoria-40ada.firebaseapp.com",
   databaseURL: "https://laboratoria-40ada-default-rtdb.firebaseio.com",
   projectId: "laboratoria-40ada",
