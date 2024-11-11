@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# no guardar el archivo de configuracion de firebase
+
+firebase.js
