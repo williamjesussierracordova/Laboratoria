@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
+import { Legend, Cell } from "recharts";
 import Header from "./parts/header"
 import Footer from "./parts/footer"
 import { Button } from "@/components/ui/button"
@@ -11,6 +12,7 @@ import axios from 'axios';
 import { useState } from "react"
 import { downloadFile } from "../firebase/fileStorage"
 import LoaderPage from "./loaderPage"
+import SequenceZoomGraph from "./component/SequenceZoomGraph"
 
 
 export default function VirusDNAAnalysis() {
@@ -46,7 +48,7 @@ export default function VirusDNAAnalysis() {
     const prediction = async () => {
         console.log("URL siendo enviada:", urlFile); // Para verificar la URL
         try {
-            const response = await axios.post('http://127.0.0.1:5000/predict', {
+            const response = await axios.post('https://29c5-132-191-2-82.ngrok-free.app/predict', {
                 url: urlFile
             }, {
                 headers: {
@@ -71,9 +73,18 @@ export default function VirusDNAAnalysis() {
         { name: 'N', count: data.n }
     ]
 
+    const colors = {
+        A: "green",
+    T: "red",
+    C: "blue",
+    G: "orange",
+    N: "gray",
+      };
+
     if (loading) {
         return <LoaderPage />
     }
+    
 
     // Función para descargar archivos
 
@@ -202,14 +213,44 @@ export default function VirusDNAAnalysis() {
                             </CardHeader>
                             <CardContent>
                                 <ResponsiveContainer width="100%" height={300}>
-                                    <BarChart data={nucleotideData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                                        <CartesianGrid strokeDasharray="3 3" />
-                                        <XAxis dataKey="name" />
-                                        <YAxis />
-                                        <Tooltip />
-                                        <Bar dataKey="count" fill="#8884d8" />
-                                    </BarChart>
+                                <BarChart
+      width={600}
+      height={300}
+      data={nucleotideData}
+      margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+    >
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="name" />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      {/* Solo un Bar, pero con un color distinto por cada nucleótido */}
+      <Bar
+        dataKey="count"
+        fill="#8884d8" // Color general (para el caso de las barras de ejemplo)
+        // Aquí vamos a aplicar los colores según el nombre de cada nucleótido
+        background={{ fill: "#eee" }}
+      >
+        {nucleotideData.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={colors[entry.name]} />
+        ))}
+      </Bar>
+    </BarChart>
                                 </ResponsiveContainer>
+                                <p><b>Importante:</b> El nucleotido N representa a la region que no se pudo leer de la cadena y/o algun otro caracter incluido en la cadena analizada diferente a los nucleotidos establecidos A, C, G y T.</p>
+                            </CardContent>
+                        </Card>
+
+                        <Card className="mt-6 bg-gray-50">
+                            <CardHeader>
+                                <CardTitle>Secuencia Genómica</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <ResponsiveContainer width="100%" >
+                                    <SequenceZoomGraph sequence={data.sequence} />
+                                </ResponsiveContainer>
+                                <br></br>
+                                <p className="text-pretty"><b>Importante:</b> El nucleotido N representa a la region que no se pudo leer de la cadena y/o algun otro caracter incluido en la cadena analizada diferente a los nucleotidos establecidos A, C, G y T.</p>
                             </CardContent>
                         </Card>
 

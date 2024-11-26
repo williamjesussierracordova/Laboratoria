@@ -40,7 +40,7 @@ const Footer = () => {
                     {/* Social Icons */}
                     <div className="space-y-4">
                         <div className="text-2xl font-bold mb-4">
-                            <a href='/home'>
+                            <a href='/'>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"

@@ -153,7 +153,7 @@ export default function SignIn() {
                 <div className="hidden lg:flex flex-col justify-center p-8 lg:p-16">
                     <blockquote className="space-y-2">
                         <p className="text-lg">
-                            " Este servicio web permite identificar el tipo de virus al que pertenece una secuencia genómica proporcionada. Puede recibir archivos en formato csv, fasta o un archivo de texto que contenga la cadena genomica a analizar. El servicio es capaz de reconocer virus como MERS, SARS, Hepatitis, Dengue e Influenza, y devolverá el tipo correspondiente según la secuencia ingresada. "
+                            " Este servicio web permite identificar el tipo de virus al que pertenece una secuencia genómica proporcionada. Puede recibir archivos en formato csv, fasta o un archivo de texto que contenga la cadena genomica a analizar. El servicio es capaz de reconocer virus como MERS, SARS, Hepatitis, Dengue e Influenza, y devolver el tipo correspondiente según la secuencia ingresada. "
                         </p>
                         <footer className="text-sm text-gray-400">Equipo de desarrollo</footer>
                     </blockquote>

@@ -14,6 +14,7 @@ const Analisis = () => {
     const [fileError, setFileError] = useState<string>("");
     const [showAlert, setShowAlert] = useState<boolean>(false);
     const [file, setFile] = useState<File | null>(null);
+    const [analisisCompleted, setAnalisisCompleted] = useState<boolean>(false);
     const navigate = useNavigate();
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,21 +36,24 @@ const Analisis = () => {
     };
 
     const handleUpload = async () => {
+        setAnalisisCompleted(true);
         // Lógica para subir el archivo a la API
         if(file){
             const code_file = uuidv4();
             await UploadFile(file, code_file);
+            setAnalisisCompleted(false);
             alert("Archivo subido correctamente");
             navigate(`/resultados/${code_file}`);
         }
         else{
+            setAnalisisCompleted(false);
             console.log("No se ha seleccionado un archivo");
         }
     }
 
 
     return (
-        <div className="min-h-screen flex flex-col mx-0 justify-center">
+        <div className="min-h-screen flex flex-col mx-0 justify-center ">
             {/* Header */}
             <div className="max-h-screen">
                 <Header />
@@ -93,7 +97,7 @@ const Analisis = () => {
                         onClick={handleUpload}
                         className="text-white hover:text-white"
                         >
-                                Analizar   
+                            {analisisCompleted ? "Analizando"  : "Analizar"}   
                         </Button>
                     </div>
                 </main>

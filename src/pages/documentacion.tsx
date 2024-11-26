@@ -14,7 +14,7 @@ export default function Documentacion() {
     <div className="min-h-screen flex flex-col items-center justify-center py-12 px-8 bg-white max-w-3xl">
       
         <header className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-2">Documentación de análisis de ADN de virus
+          <h1 className="text-4xl font-bold mb-2">Documentación
           </h1>
           <p className="text-xl text-muted-foreground">Descripción general y guía de uso
           </p>
@@ -35,7 +35,7 @@ export default function Documentacion() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p>
-                  El proyecto de análisis de ADN de virus es una aplicación web basada en React que visualiza los resultados de la clasificación de aprendizaje profundo en secuencias de ADN de virus. Proporciona una interfaz fácil de usar para mostrar la clasificación de virus, estadísticas de ADN y distribución de nucleótidos.
+                  El proyecto de análisis de genoma de virus es una aplicación web basada en React que visualiza los resultados de la clasificación de aprendizaje profundo en secuencias genomicas de virus. Proporciona una interfaz fácil de usar para mostrar la clasificación de virus, estadísticas del genoma y distribución de nucleótidos.
                 </p>
                 <h3 className="text-lg font-semibold">Puntos clave:</h3>
                 <ul className="flex flex-col justify-start text-left list-disc pl-5 space-y-2">
@@ -43,7 +43,7 @@ export default function Documentacion() {
                     Clasificación de virus con puntuación de confianza sobre la clasificación
                   </li>
                   <li>
-                    Estadísticas de ADN que incluyen longitud de secuencia, contenido de GC y recuento de regiones codificantes y no codificantes
+                    Estadísticas del genoma que incluyen longitud de secuencia, contenido de GC y recuento de regiones codificantes y no codificantes
                   </li>
                   <li>
                     Gráfico interactivo para la distribución de nucleótidos
@@ -94,7 +94,7 @@ export default function Documentacion() {
               <CardContent className="space-y-4">
                 <h3 className="text-lg font-semibold">Carga de archivo</h3>
                 <a>
-                  Los archivos soportados por ahora son .fasta, .txt y .csv para la carga de datos genomicos de virus.
+                  Los archivos soportados actualmente son .fasta, .txt y .csv para la carga de datos genomicos de virus.
                 </a>
                 <p className="bold ">Consideraciones adicionales:</p>
                 <ul className="list-disc pl-5 space-y-2">
@@ -131,7 +131,7 @@ export default function Documentacion() {
 
                 <h3 className="text-lg font-semibold">Resultados</h3>
                 <p>
-                  Los resultados mostrados en la interfaz de usuario son generados por el servidor de laboratoria y son presentados en tiempo real. Los resultados incluyen la clasificación del virus, estadísticas de ADN y distribución de nucleótidos. Adicionalmente, se proporcionan insights adicionales sobre el virus analizado. 
+                  Los resultados mostrados en la interfaz de usuario son generados por el servidor de laboratoria y son presentados en tiempo real. Los resultados incluyen la clasificación del virus, estadísticas del genoma y distribución de nucleótidos. Adicionalmente, se proporcionan insights adicionales sobre el virus analizado. 
                 </p>
                 <p>
                   Para asegurar la transparencia y la precision de los resultados mostrados. Laboratoria proporciona acceso al repositorio publico del proyecto en <a href="https://github.com/williamjesussierracordova/classification_viruses" target="_blank">GitHub</a>, donde se puede revisar el codigo fuente y los modelos utilizados para el analisis.
@@ -150,7 +150,7 @@ export default function Documentacion() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p>
-                  El proyecto de análisis de ADN de virus utiliza una API RESTful para el procesamiento de datos y la clasificación de virus. La API proporciona endpoints para cargar archivos, procesar secuencias de ADN y obtener resultados de clasificación.
+                  Laboratoria utiliza una API RESTful para el procesamiento de datos y la clasificación de virus. La API proporciona endpoints para cargar archivos, procesar secuencias genomicas y obtener resultados de clasificación.
                 </p>
 
                 <p>

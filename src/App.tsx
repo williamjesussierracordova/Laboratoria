@@ -8,14 +8,15 @@ import Analisis from './pages/analisis'
 import Contact from './pages/contact'
 import VirusDNAAnalysis from './pages/results'
 import Documentacion from './pages/documentacion'
+import { initializeFirebase } from "./firebase/firebase"; // Asegúrate de importar correctamente
 function App() {
-
+  initializeFirebase()
   return (
     <>
       <Routes>
-        <Route path="/" element={<SignIn />} />
-        <Route path="/signUp" element={<SignUp />} />
-        <Route path="/home" element={<HomePage />} />
+        {/* <Route path="/" element={<SignIn />} />
+        <Route path="/signUp" element={<SignUp />} /> */}
+        <Route path="/" element={<HomePage />} />
         <Route path="/analisis" element={<Analisis />} />
         <Route path="/contact" element={<Contact />} />	
         <Route path="/resultados/:idFile" element={<VirusDNAAnalysis />} />

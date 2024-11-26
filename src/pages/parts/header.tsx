@@ -4,7 +4,7 @@ const Header = () => {
         // header
         <header className="flex justify-between items-center p-4 border-b">
             <div className="text-2xl font-bold">
-                <a href='/home'>
+                <a href='/'>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"

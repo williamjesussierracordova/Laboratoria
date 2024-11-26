@@ -23,9 +23,11 @@ const Contact = () => {
         email: '',
         message: ''
     })
+    const [sendMessage, setSendMessage] = useState<boolean>(false)
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        setSendMessage(true)
 
         // Configuración de EmailJS
         emailjs
@@ -44,10 +46,12 @@ const Contact = () => {
             (response) => {
               console.log('Correo enviado con éxito:', response.status, response.text);
               alert('Correo enviado con éxito');
+              setSendMessage(false)
             },
             (error) => {
               console.error('Error al enviar el correo:', error);
               alert('Hubo un error al enviar el correo. Intenta nuevamente.');
+              setSendMessage(false)
             }
           );
     }
@@ -129,7 +133,7 @@ const Contact = () => {
                                 </div>
 
                                 <Button type="submit" className="w-full bg-gray-900 hover:bg-gray-800">
-                                    Enviar
+                                    {sendMessage ? 'Enviando...' : 'Enviar'}
                                 </Button>
                             </form>
                         </CardContent>

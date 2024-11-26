@@ -14,7 +14,7 @@ export default function HomePage() {
             {/* Hero Section */}
             <main className="flex-1 min-h-screen flex flex-col items-center justify-center text-center p-4">
                 <h1 className="text-4xl font-bold mb-4">Laboratoria</h1>
-                <p className="text-xl text-muted-foreground mb-8">Software para la detección de virus a partir de su cadena genomica</p>
+                <p className="text-xl text-muted-foreground mb-2 mx-40  text-wrap">Software para la detección de virus MERS, SARS, Hepatitis, Influenza y dengue, a partir de su cadena genomica y analisis de insights adicionales.</p>
                 <div className="space-x-4">
                     <Button variant="outline"><a href='/documentacion' className='text-black hover:text-black'>Documentación</a></Button>
                     <Button><a href='/analisis' className='text-white hover:text-white'>Empezar</a></Button>
